@@ -4,13 +4,15 @@
   "description": "CONHECENDO O EXPRESS",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon"
+    "start": "nodemon",
+    "production":"pm2 start index.js --name appx-backend"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "express": "^5.1.0",
-    "nodemon": "^3.1.10"
+    "nodemon": "^3.1.10",
+    "pm2": "^6.0.8"
   }
 }
