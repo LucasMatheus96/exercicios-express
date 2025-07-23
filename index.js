@@ -1,9 +1,15 @@
 const express = require('express')
 const app = express()
+const saudacao = require('./saudacaoMid')
 
+app.use(saudacao('guilherme'))
 
+app.use('/opa', (req,res,next)=>{
+    console.log('Antes...')
+    next();
+})
 
-app.get('/opa',(req,res)=>{
+app.get('/opa',(req,res,next)=>{
 
     res.json([
         {id: 7, name:'ana', position:1},
@@ -16,6 +22,8 @@ app.get('/opa',(req,res)=>{
     //     discount:0.12
     // })
     // res.send("/opa", "estou bem");
+
+    next()
 })
 
 app.use('/opa',(req,res)=>{
